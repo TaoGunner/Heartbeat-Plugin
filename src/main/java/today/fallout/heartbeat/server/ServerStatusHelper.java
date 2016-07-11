@@ -39,14 +39,10 @@ public class ServerStatusHelper
 			connection.setFixedLengthStreamingMode(postData.length());
 			connection.connect();
 
-			System.out.println(postData);
-
 			OutputStreamWriter output = new OutputStreamWriter(connection.getOutputStream());
 			output.write(postData);
 			output.flush();
 			output.close();
-
-			System.out.println(connection.getResponseCode());
 
 			return connection.getResponseCode() == HttpURLConnection.HTTP_OK;
 		}
