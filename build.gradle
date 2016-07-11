@@ -1,0 +1,32 @@
+plugins {
+	id "java-gradle-plugin"
+    id 'org.spongepowered.plugin' version '0.6'
+}
+
+sponge {
+    plugin {
+		id = 'heartbeat'
+    }
+}
+
+group = 'today.fallout'
+version = sponge.plugin.meta.version
+description = sponge.plugin.meta.description
+archivesBaseName = sponge.plugin.meta.name
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+// archivesBaseName = project.name.toLowerCase()
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'sponge'
+        url = 'http://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:4.1.0'
+}
